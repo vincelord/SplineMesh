@@ -44,6 +44,22 @@ namespace SplineMesh {
         [SerializeField]
         private Vector3 direction;
 
+        [SerializeField]
+        private Vector3 direction2;
+
+        public Vector3 Direction2
+        {
+            get { return direction2; }
+            set
+            {
+                if (direction2.Equals(value)) return;
+                direction2.x = value.x;
+                direction2.y = value.y;
+                direction2.z = value.z;
+                if (Changed != null) Changed(this, EventArgs.Empty);
+            }
+        }
+
         /// <summary>
         /// Up vector to apply at this node.
         /// Usefull to specify the orientation when the tangent blend with the world UP (gimball lock)

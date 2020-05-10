@@ -72,7 +72,8 @@ namespace SplineMesh {
         /// </summary>
         /// <returns></returns>
         public Vector3 GetInverseDirection() {
-            return (2 * n2.Position) - n2.Direction;
+            //return (2 * n2.Position) - n2.Direction;
+            return n1.Direction2 != null ? n1.Direction2 : (2 * n2.Position) - n2.Direction;
         }
 
         /// <summary>
